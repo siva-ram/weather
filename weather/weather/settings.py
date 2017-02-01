@@ -25,12 +25,13 @@ SECRET_KEY = 'gj=+qfq5b#7y6x1bh07rk*0n5hfxa$61v_#b%j(*0(*=x8m=sy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','.amazonaws.com',]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'weatherapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
