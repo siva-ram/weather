@@ -1,0 +1,92 @@
+﻿{% extends "base.html" %}
+
+{% block header %}
+ <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+{% load staticfiles %}
+    <header class="intro-header" style="background-image: url('{% static "img/home-bg.jpg" %}')">
+        <div class="container">
+            <div class="row">
+                <div >
+                    <div class="site-heading">
+                        <h1>Weather Forecast</h1>
+                        <hr class="small">
+                        <span class="subheading">Get the Weather Forecast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+	<div class="container">
+        <div class="row">
+            <h2> Select one of below options : </h2>
+        </div>
+		<div class="row">
+			 <div>
+<div id="form-block" class="hidden">
+<div class="btn-group" role="group" aria-label="group">
+  <button type="button" id="btn-currentlocType" class="btn btn-primary">Get the Weather for your current locType</button>
+  <button type="button" id="btn-customlocType" class="btn btn-primary">Find the Weather for another locType</button>
+</div>
+    <br />
+<form id="weatherForm" action="/weather/" method="post" >
+	{% csrf_token %}
+	<div class="form-group">
+	  <input  class="form-control" id="id_locType" name="locType" type="hidden" value="{{ form.locType.value |default_if_none:''}}">
+		<input class="form-control" placeholder="Search" 
+			   id="id_userLoc" maxlength="100" name="userLoc" type="text" 
+			   required=""
+			   value="{{ form.userLoc.value |default_if_none:''}}">
+		</div>
+		<button type="submit" class="btn btn-default btn-submit">Submit</button>
+</form>
+    <hr />
+
+ <div id="geolocTypeMessage" class="hidden">GeolocType is not supported for this Browser/OS.</div>
+    <br />
+  
+    {% if content %}
+    <table class="table table-striped table-bordered">
+       <tbody>
+        <tr>
+          <th scope="row">Location:</th>
+          <td>{{ content.location }}</td>
+        </tr>    
+        <tr>
+          <th scope="row">Description:</th>
+          <td>{{ content.description }}</td>
+        </tr>  
+        <tr>
+        <tr>
+          <th scope="row">Temperature(℉):</th>
+          <td>{{ content.temp }}</td>
+        </tr>  
+        <tr>
+          <th scope="row">Maximum Temperature(℉):</th>
+          <td>{{ content.tempmax }}</td>
+        </tr>    
+        <tr>
+          <th scope="row">Minimum Temperature(℉):</th>
+          <td>{{ content.tempmin }}</td>
+        </tr>    
+        <tr>
+          <th scope="row">Wind Speed(mps):</th>
+          <td>{{ content.wind }}</td>
+        </tr>      
+      </tbody>
+    </table>
+    {% endif %}
+</div>
+
+</div>
+			</div>
+		</div>
+
+{% endblock %}
+
+
+

@@ -1,18 +1,17 @@
-"""
-Definition of urls for weather.
-"""
+from django.conf.urls import *
 
-from django.conf.urls import include, url
+from . import views
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
 
 urlpatterns = [
     # Examples:
     # url(r'^$', weather.views.home, name='home'),
-     url(r'^', include('weatherapp.urls')),
-     #url(r'^getname$', ),
+   
+    url(r'^$', views.index, name='index'),
+    url(r'^weather/$', views.get_weather, name='get weather'),
+    url(r'^about/$', views.about, name='about'),
+
+    #url(r'^$', HomePageView.as_view(), name='index'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
