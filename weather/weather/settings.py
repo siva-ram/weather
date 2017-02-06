@@ -25,7 +25,7 @@ SECRET_KEY = 'gj=+qfq5b#7y6x1bh07rk*0n5hfxa$61v_#b%j(*0(*=x8m=sy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','.amazonaws.com',]
+ALLOWED_HOSTS = ['localhost','.amazonaws.com','theweather.zapto.org']
 
 
 # Application definition
