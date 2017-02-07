@@ -47,5 +47,25 @@ Technologies Used:
   Usied Noip for the dynamic dns theweather.zapto.org"
   
  
+Getting the weather information
+--------------------------------
+the website gets the weather information from the api http://openweathermap.org/current. We make api calls to openweathermap passing on the location parameters to get the weather information.
+
+Main parts of the code
+------------------------
+
+weather/weather/weatherapp/apiCall.py - contains the openweathermap api call code
+weather/weather/weatherapp/views.py - controller that handles the website interaction
+weather/weather/weatherapp/urls.py - url patterns
+weather/weather/weatherapp/templates/ - contains the django view templates of all the pages
+weather/weather/weatherapp/static/weatherapp/app.js - javascript code for detecting location and handing UI interactions.
+
+Tools used
+------------------
+PTVS  for developing the django website on the local windows machine
+
+
+
+
 
 
