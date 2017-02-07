@@ -29,8 +29,8 @@
 			 <div>
 <div id="form-block" class="hidden">
 <div class="btn-group" role="group" aria-label="group">
-  <button type="button" id="btn-currentlocType" class="btn btn-primary">Get the Weather for your current locType</button>
-  <button type="button" id="btn-customlocType" class="btn btn-primary">Find the Weather for another locType</button>
+  <button type="button" id="btn-currentlocType" class="btn btn-primary">Get the Weather for your current location</button>
+  <button type="button" id="btn-customlocType" class="btn btn-primary">Find the Weather for another location</button>
 </div>
     <br />
 <form id="weatherForm" action="/weather/" method="post" >
@@ -46,7 +46,7 @@
 </form>
     <hr />
 
- <div id="geolocTypeMessage" class="hidden">GeolocType is not supported for this Browser/OS.</div>
+ <div id="geolocTypeMessage" class="hidden">Geolocation is not supported for this Browser/OS.</div>
     <br />
   
     {% if content %}

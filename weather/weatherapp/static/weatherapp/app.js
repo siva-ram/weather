@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
 
 	var startPos;
 	var geoOptions = {
@@ -17,7 +17,7 @@
 	    console.log('Error occurred. Error code: ' + error.code);
 	    switch (error.code) {
 	        case error.PERMISSION_DENIED:
-	            x.innerHTML = "User denied the request for GeolocType."
+	            x.innerHTML = "User denied the request for geolocation."
 	            break;
 	        case error.POSITION_UNAVAILABLE:
 	            x.innerHTML = "locType information is unavailable."
