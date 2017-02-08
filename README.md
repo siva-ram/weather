@@ -4,8 +4,8 @@
 Developed a weather forecast website using the Django web framework on Python 2.7 and hosted it on apache(httpd) server on a amazon ec2 VM.
 
 The Website has two functionalities
-1. Getting the weather by of your current location
-2. Search for the weather of another location
+* Getting the weather by of your current location
+* Search for the weather of another location
 
 The home page has two button to select one of the above options
 
@@ -69,7 +69,7 @@ Further improvements that can be done -- Use AJAX post to improve site responsiv
 
 Django config file contents
 ---------------------------
-
+```
 Alias /static /var/www/weather/weather/weatherapp/static
 <Directory /var/www/weather/weather/weatherapp/static>
     Allow from all
@@ -85,29 +85,29 @@ WSGIDaemonProcess weather python-path=/var/www/weather/weather/weatherapp:/var/w
 WSGIProcessGroup weather
 WSGIScriptAlias / /var/www/weather/weather/weather/wsgi.py
 WSGISocketPrefix /var/run/wsgi
-
+```
 
 Sample commands used on VM
 -------------
 1. Installing python, apache and wsgi mod
-  sudo yum install httpd-devel
+  ```sudo yum install httpd-devel
   sudo yum install python27
   virtualenv -p /usr/bin/python2.7 venv
-  sudo pip install mod_wsgi
+  sudo pip install mod_wsgi```
    
  
 2. Install git and clone the app 
-  sudo yum install git
-  git clone https://github.com/siva-ram/weather.git
+  ```sudo yum install git
+  git clone https://github.com/siva-ram/weather.git```
  
 3. Modify django conf 
-  sudo nano /etc/httpd/conf.d/django.conf
+  ```sudo nano /etc/httpd/conf.d/django.conf```
 
 4. Install mod ssl
-  sudo yum install mod_ssl
+  ```sudo yum install mod_ssl```
 
 5. Restart httpd
-  sudo service httpd restart
+  ```sudo service httpd restart```
   
  Info on installing dynamic dns is present in the link
  https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dynamic-dns.html
