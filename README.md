@@ -91,13 +91,17 @@ Sample commands used on VM
 -------------
 1. Installing python, apache and wsgi mod
   ```sudo yum install httpd-devel
+  
   sudo yum install python27
+  
   virtualenv -p /usr/bin/python2.7 venv
+  
   sudo pip install mod_wsgi```
    
  
 2. Install git and clone the app 
   ```sudo yum install git
+  
   git clone https://github.com/siva-ram/weather.git```
  
 3. Modify django conf 
